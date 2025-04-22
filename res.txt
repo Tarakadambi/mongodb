@@ -1,0 +1,217 @@
+#a
+from pymongo import MongoClient
+
+from pprint import pprint
+
+client = MongoClient(
+    host="127.0.0.1",
+    port = 27017,
+    # auth line 1,
+    # auth line 2
+)
+
+#b)
+admin', 'config', 'employees', 'local', 'sample_training']
+
+#c)
+Collections in 'sample_training' database: ['books']
+
+#d-1)
+
+One document from the 'books' collection: {'_id': 1, 'title': 'Unlocking Android', 'isbn': '1933988673', 'pageCount': 416, 'publishedDate': datetime.datetime(2009, 4, 1, 7, 0), 'thumbnailUrl': 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/ableson.jpg', 'shortDescription': "Unlocking Android: A Developer's Guide provides concise, hands-on instruction for the Android operating system and development tools. This book teaches important architectural concepts in a straightforward writing style and builds on this with practical and useful examples throughout.", 'longDescription': "Android is an open source mobile phone platform based on the Linux operating system and developed by the Open Handset Alliance, a consortium of over 30 hardware, software and telecom companies that focus on open standards for mobile devices. Led by search giant, Google, Android is designed to deliver a better and more open and cost effective mobile experience.    Unlocking Android: A Developer's Guide provides concise, hands-on instruction for the Android operating system and development tools. This book teaches important architectural concepts in a straightforward writing style and builds on this with practical and useful examples throughout. Based on his mobile development experience and his deep knowledge of the arcane Android technical documentation, the author conveys the know-how you need to develop practical applications that build upon or replace any of Androids features, however small.    Unlocking Android: A Developer's Guide prepares the reader to embrace the platform in easy-to-understand language and builds on this foundation with re-usable Java code examples. It is ideal for corporate and hobbyists alike who have an interest, or a mandate, to deliver software functionality for cell phones.    WHAT'S INSIDE:        * Android's place in the market      * Using the Eclipse environment for Android development      * The Intents - how and why they are used      * Application classes:            o Activity            o Service            o IntentReceiver       * User interface design      * Using the ContentProvider to manage data      * Persisting data with the SQLite database      * Networking examples      * Telephony applications      * Notification methods      * OpenGL, animation & multimedia      * Sample Applications  ", 'status': 'PUBLISH', 'authors': ['W. Frank Ableson', 'Charlie Collins', 'Robi Sen'], 'categories': ['Open Source', 'Mobile']}
+
+#d)
+{'_id': 1,
+ 'authors': ['W. Frank Ableson', 'Charlie Collins', 'Robi Sen'],
+ 'categories': ['Open Source', 'Mobile'],
+ 'isbn': '1933988673',
+ 'longDescription': 'Android is an open source mobile phone platform based on '
+                    'the Linux operating system and developed by the Open '
+                    'Handset Alliance, a consortium of over 30 hardware, '
+                    'software and telecom companies that focus on open '
+                    'standards for mobile devices. Led by search giant, '
+                    'Google, Android is designed to deliver a better and more '
+                    'open and cost effective mobile experience.    Unlocking '
+                    "Android: A Developer's Guide provides concise, hands-on "
+                    'instruction for the Android operating system and '
+                    'development tools. This book teaches important '
+                    'architectural concepts in a straightforward writing style '
+                    'and builds on this with practical and useful examples '
+                    'throughout. Based on his mobile development experience '
+                    'and his deep knowledge of the arcane Android technical '
+                    'documentation, the author conveys the know-how you need '
+                    'to develop practical applications that build upon or '
+                    'replace any of Androids features, however small.    '
+                    "Unlocking Android: A Developer's Guide prepares the "
+                    'reader to embrace the platform in easy-to-understand '
+                    'language and builds on this foundation with re-usable '
+                    'Java code examples. It is ideal for corporate and '
+                    'hobbyists alike who have an interest, or a mandate, to '
+                    "deliver software functionality for cell phones.    WHAT'S "
+                    "INSIDE:        * Android's place in the market      * "
+                    'Using the Eclipse environment for Android '
+                    'development      * The Intents - how and why they are '
+                    'used      * Application classes:            o '
+                    'Activity            o Service            o '
+                    'IntentReceiver       * User interface design      * Using '
+                    'the ContentProvider to manage data      * Persisting data '
+                    'with the SQLite database      * Networking examples      '
+                    '* Telephony applications      * Notification methods      '
+                    '* OpenGL, animation & multimedia      * Sample '
+                    'Applications  ',
+ 'pageCount': 416,
+ 'publishedDate': datetime.datetime(2009, 4, 1, 7, 0),
+ 'shortDescription': "Unlocking Android: A Developer's Guide provides concise, "
+                     'hands-on instruction for the Android operating system '
+                     'and development tools. This book teaches important '
+                     'architectural concepts in a straightforward writing '
+                     'style and builds on this with practical and useful '
+                     'examples throughout.',
+ 'status': 'PUBLISH',
+ 'thumbnailUrl': 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/ableson.jpg',
+ 'title': 'Unlocking Android'}
+
+#e)
+Number of documents in the 'books' collection: 431
+
+#a2-1)
+Number of books with more than 400 pageCount: 157
+#a2-2)
+Books with more than 400 pages: 157
+Books that are published: 363
+
+#b2)
+Number of books with 'Android' in their description: 4
+
+#c2)
+First Category: ['Microsoft'], Second Category: ['Object-Oriented Programming', 'S']
+
+#d2)
+Number of books containing Python, Java, C++, or Scala in their long description: 131
+
+#e2)
+Category: internet, Max Pages: 400, Min Pages: 400, Avg Pages: 400.00
+Category: Theory, Max Pages: 591, Min Pages: 280, Avg Pages: 420.43
+Category: Programming, Max Pages: 570, Min Pages: 280, Avg Pages: 434.60
+Category: S, Max Pages: 350, Min Pages: 350, Avg Pages: 350.00
+Category: , Max Pages: 368, Min Pages: 200, Avg Pages: 284.00
+Category: Mobile, Max Pages: 416, Min Pages: 416, Avg Pages: 416.00
+Category: XML, Max Pages: 680, Min Pages: 304, Avg Pages: 482.00
+Category: Microsoft .NET, Max Pages: 848, Min Pages: 300, Avg Pages: 464.34
+Category: Object-Technology Programming, Max Pages: 200, Min Pages: 200, Avg Pages: 200.00
+Category: Java, Max Pages: 1088, Min Pages: 180, Avg Pages: 513.94
+Category: Microsoft, Max Pages: 925, Min Pages: 344, Avg Pages: 572.38
+Category: SOA, Max Pages: 250, Min Pages: 250, Avg Pages: 250.00
+Category: Object-Oriented Programming, Max Pages: 512, Min Pages: 350, Avg Pages: 408.50
+Category: Computer Graphics, Max Pages: 840, Min Pages: 328, Avg Pages: 520.33
+Category: PowerBuilder, Max Pages: 550, Min Pages: 362, Avg Pages: 433.71
+Category: Computer Graph, Max Pages: 400, Min Pages: 400, Avg Pages: 400.00
+Category: Internet, Max Pages: 912, Min Pages: 200, Avg Pages: 452.27
+Category: Business, Max Pages: 696, Min Pages: 180, Avg Pages: 404.17
+Category: Miscellaneous, Max Pages: 1096, Min Pages: 316, Avg Pages: 706.00
+Category: Perl, Max Pages: 504, Min Pages: 304, Avg Pages: 385.33
+Category: Networking, Max Pages: 591, Min Pages: 320, Avg Pages: 427.50
+Category: Client Server, Max Pages: 368, Min Pages: 368, Avg Pages: 368.00
+Category: Software Engineering, Max Pages: 544, Min Pages: 320, Avg Pages: 418.55
+Category: Mobile Technology, Max Pages: 504, Min Pages: 325, Avg Pages: 444.75
+Category: P, Max Pages: 512, Min Pages: 512, Avg Pages: 512.00
+Category: PHP, Max Pages: 552, Min Pages: 552, Avg Pages: 552.00
+Category: .NET, Max Pages: 925, Min Pages: 925, Avg Pages: 925.00
+Category: Client-Server, Max Pages: 1101, Min Pages: 220, Avg Pages: 516.00
+Category: Software Development, Max Pages: 600, Min Pages: 600, Avg Pages: 600.00
+Category: Web Development, Max Pages: 688, Min Pages: 300, Avg Pages: 441.47
+Category: Open Source, Max Pages: 532, Min Pages: 416, Avg Pages: 474.00
+Category: Python, Max Pages: 688, Min Pages: 350, Avg Pages: 482.33
+
+#f2)
+
+Title: Android in Action, Second Edition, Year: 2011, Month: 1, Day: 14
+Title: Specification by Example, Year: 2011, Month: 6, Day: 3
+Title: Flex 4 in Action, Year: 2010, Month: 11, Day: 15
+Title: Flex on Java, Year: 2010, Month: 10, Day: 15
+Title: Griffon in Action, Year: 2012, Month: 6, Day: 4
+Title: OSGi in Depth, Year: 2011, Month: 12, Day: 12
+Title: Hello! Flex 4, Year: 2009, Month: 11, Day: 1
+Title: Brownfield Application Development in .NET, Year: 2010, Month: 4, Day: 16
+Title: MongoDB in Action, Year: 2011, Month: 12, Day: 12
+Title: jQuery in Action, Second Edition, Year: 2010, Month: 6, Day: 1
+Title: Website Owner's Manual, Year: 2009, Month: 10, Day: 1
+Title: ASP.NET 4.0 in Practice, Year: 2011, Month: 5, Day: 15
+Title: Hello! Python, Year: 2012, Month: 2, Day: 13
+Title: iOS in Practice, Year: 2013, Month: 11, Day: 1
+Title: The Quick Python Book, Second Edition, Year: 2010, Month: 1, Day: 1
+Title: Spring Dynamic Modules in Action, Year: 2010, Month: 9, Day: 4
+Title: SQL Server 2008 Administration in Action, Year: 2009, Month: 8, Day: 1
+Title: Android in Practice, Year: 2011, Month: 9, Day: 30
+Title: Hello! HTML5 & CSS3, Year: 2012, Month: 10, Day: 17
+Title: Open Source SOA, Year: 2009, Month: 5, Day: 1
+
+#g2)
+Title: The Quick Python Book, Second Edition, Published Date: 2010-01-01 08:00:00, Author 1: Naomi R. Ceder, Author 2: N/A, Author 3: N/A, Author 4: N/A
+Title: DSLs in Boo: Domain-Specific Languages in .NET, Published Date: 2010-01-01 08:00:00, Author 1: Oren Eini writing as Ayende Rahien, Author 2: N/A, Author 3: N/A, Author 4: N/A
+Title: Brownfield Application Development in .NET, Published Date: 2010-04-16 07:00:00, Author 1: Kyle Baley, Author 2: Donald Belcham, Author 3: N/A, Author 4: N/A
+Title: jQuery in Action, Second Edition, Published Date: 2010-06-01 07:00:00, Author 1: Bear Bibeault, Author 2: Yehuda Katz, Author 3: N/A, Author 4: N/A
+Title: ASP.NET MVC 2 in Action, Published Date: 2010-06-01 07:00:00, Author 1: Jeffrey Palermo, Author 2: Ben Scheirman, Author 3: Jimmy Bogard, Author 4: Eric Hexter
+Title: PowerShell in Practice, Published Date: 2010-06-08 07:00:00, Author 1: Richard Siddaway, Author 2: N/A, Author 3: N/A, Author 4: N/A
+Title: JUnit in Action, Second Edition, Published Date: 2010-07-01 07:00:00, Author 1: Petar Tahchiev, Author 2: Felipe Leme, Author 3: Vincent Massol, Author 4: 
+Title: Lucene in Action, Second Edition, Published Date: 2010-07-09 07:00:00, Author 1: Erik Hatcher, Author 2: Otis Gospodnetic, Author 3: , Author 4: Michael McCandless
+Title: iPhone and iPad in Action, Published Date: 2010-08-01 07:00:00, Author 1: Brandon Trebitowski, Author 2: Christopher Allen, Author 3: , Author 4: Shannon Appelcline
+Title: Event Processing in Action, Published Date: 2010-08-15 07:00:00, Author 1: N/A, Author 2: N/A, Author 3: N/A, Author 4: N/A
+Title: Spring Dynamic Modules in Action, Published Date: 2010-09-04 07:00:00, Author 1: Arnaud Cogoluegnes, Author 2: Thierry Templier, Author 3: , Author 4: Andy Piper
+Title: Silverlight 4 in Action, Revised Edition, Published Date: 2010-10-04 07:00:00, Author 1: Pete Brown, Author 2: N/A, Author 3: N/A, Author 4: N/A
+Title: Flex on Java, Published Date: 2010-10-15 07:00:00, Author 1: Bernerd Allmon, Author 2: Jeremy Anderson, Author 3: N/A, Author 4: N/A
+Title: Azure in Action, Published Date: 2010-10-22 07:00:00, Author 1: Chris Hay, Author 2: Brian H. Prince, Author 3: N/A, Author 4: N/A
+Title: Flex 4 in Action, Published Date: 2010-11-15 08:00:00, Author 1: Tariq Ahmed, Author 2: Dan Orlando, Author 3: John C. Bland II, Author 4: Joel Hooks
+Title: Erlang and OTP in Action, Published Date: 2010-11-16 08:00:00, Author 1: Martin Logan, Author 2: Eric Merritt, Author 3: , Author 4: Richard Carlsson
+Title: iText in Action, Second Edition, Published Date: 2010-11-22 08:00:00, Author 1: Bruno Lowagie, Author 2: N/A, Author 3: N/A, Author 4: N/A
+Title: The Cloud at Your Service, Published Date: 2010-11-22 08:00:00, Author 1: Jothy Rosenberg, Author 2: Arthur Mateos, Author 3: N/A, Author 4: N/A
+Title: DSLs in Action, Published Date: 2010-12-01 08:00:00, Author 1: N/A, Author 2: N/A, Author 3: N/A, Author 4: N/A
+Title: Hadoop in Action, Published Date: 2010-12-01 08:00:00, Author 1: Chuck Lam, Author 2: N/A, Author 3: N/A, Author 4: N/A
+
+#h2)
+Author: None, Publications: 10
+Author: Don Jones, Publications: 5
+Author: Pete Brown, Publications: 2
+Author: Jeffrey Palermo, Publications: 2
+Author: W. Frank Ableson, Publications: 2
+Author: Rob Crowther, Publications: 2
+Author: Richard Siddaway, Publications: 2
+Author: Timothy Binkley-Jones, Publications: 2
+Author: Christopher R. Mitchell, Publications: 2
+Author: Arnaud Cogoluegnes, Publications: 2
+
+#i2)
+Number of authors: 0, Number of books: 37
+Number of authors: 1, Number of books: 206
+Number of authors: 2, Number of books: 105
+Number of authors: 3, Number of books: 9
+Number of authors: 4, Number of books: 47
+Number of authors: 5, Number of books: 16
+Number of authors: 6, Number of books: 6
+Number of authors: 7, Number of books: 2
+Number of authors: 8, Number of books: 3
+
+#j2)
+Author: , Occurrences: 59
+Author: Vikram Goyal, Occurrences: 12
+Author: Richard Siddaway, Occurrences: 6
+Author: Don Jones, Occurrences: 6
+Author: Christian Bauer, Occurrences: 5
+Author: Yehuda Katz, Occurrences: 5
+Author: Jon Skeet, Occurrences: 5
+Author: Gavin King, Occurrences: 5
+Author: Greg Low, Occurrences: 4
+Author: Erik Hatcher, Occurrences: 4
+Author: Craig Walls, Occurrences: 4
+Author: Kalen Delaney, Occurrences: 4
+Author: Daniel Minoli, Occurrences: 3
+Author: Tim Hatton, Occurrences: 3
+Author: Jimmy Bogard, Occurrences: 3
+Author: Matthew Scarpino, Occurrences: 3
+Author: Dave Crane, Occurrences: 3
+Author: Charlie Collins, Occurrences: 3
+Author: Ted Neward, Occurrences: 3
+Author: Gary Gregory, Occurrences: 3
+
+
+
